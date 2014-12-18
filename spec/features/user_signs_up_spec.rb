@@ -15,7 +15,7 @@ feature "user signs up for an account" do
     click_on "Sign Up"
     fill_in "First Name", with: "Alex"
     fill_in "Last Name", with: "Graff"
-    fill_in "Email", with: "graffam87@gmail.com"
+    fill_in "Email", with: "graffam877@gmail.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_on "Sign up"
@@ -40,13 +40,13 @@ feature "user signs up for an account" do
     existing_user = User.create(
       first_name: "Alex",
       last_name: "Graff",
-      email:"graffam87@gmail.com",
+      email:"graffam877@gmail.com",
       password: "password")
     visit root_path
     click_on "Sign Up"
     fill_in "First Name", with: "Ted"
     fill_in "Last Name", with: "Graff"
-    fill_in "Email", with: "graffam87@gmail.com"
+    fill_in "Email", with: "graffam877@gmail.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_on "Sign up"

@@ -1,5 +1,5 @@
 require 'rails_helper'
-feature "signs into existing account" do
+feature "user signs into existing account" do
   # As a broad employee
   # I want to sign in to view the reagent ordering application
   # So that I can use all of its awesome features.
