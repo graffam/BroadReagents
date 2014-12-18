@@ -5,7 +5,7 @@ feature "user signs up for an account" do
   # So that I can use all of its awesome features.
   # [X] There is a link to 'Sign Up' on the homepage.
   # [X] If I fill in my first name, last name, email, password, and password confirmation correctly, I am greeted with a confirmation message that my account has been created.
-  # [ ] If the password and password confirmation fields do not match, I am given an error message.
+  # [X] If the password and password confirmation fields do not match, I am given an error message.
   # [ ] If my email already exists in the database, I am given a message that tells me I have already registered.
   # [ ] If my email is not formatted correctly, I am given an error message.
 
@@ -22,11 +22,32 @@ feature "user signs up for an account" do
     expect(page).to have_content "Welcome! You have signed up successfully."
   end
 
+  scenario "password fields to not match" do
+    visit root_path
+    click_on "Sign Up"
+    fill_in "First Name", with: "Alex"
+    fill_in "Last Name", with: "Graff"
+    fill_in "Email", with: "graffam87@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "passwsdord"
+    click_on "Sign up"
+    expect(page).to have_content "Password confirmation doesn't match"
+  end
 
-
-
-
-
-
-
+  scenario "Email already exists in the database" do
+    existing_user = User.create(
+      first_name: "Alex",
+      last_name: "Graff",
+      email:"graffam87@gmail.com",
+      password: "password")
+    visit root_path
+    click_on "Sign Up"
+    fill_in "First Name", with: "Ted"
+    fill_in "Last Name", with: "Graff"
+    fill_in "Email", with: "graffam87@gmail.com"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_on "Sign up"
+    expect(page).to have_content "Email has already been taken"
+  end
 end
