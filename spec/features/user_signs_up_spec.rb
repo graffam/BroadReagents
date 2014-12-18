@@ -6,7 +6,7 @@ feature "user signs up for an account" do
   # [X] There is a link to 'Sign Up' on the homepage.
   # [X] If I fill in my first name, last name, email, password, and password confirmation correctly, I am greeted with a confirmation message that my account has been created.
   # [X] If the password and password confirmation fields do not match, I am given an error message.
-  # [ ] If my email already exists in the database, I am given a message that tells me I have already registered.
+  # [X] If my email already exists in the database, I am given a message that tells me I have already registered.
   # [ ] If my email is not formatted correctly, I am given an error message.
 
 
@@ -49,5 +49,17 @@ feature "user signs up for an account" do
     fill_in "Password confirmation", with: "password"
     click_on "Sign up"
     expect(page).to have_content "Email has already been taken"
+  end
+
+  scenario "Email is not formatted correctly" do
+    visit root_path
+    click_on "Sign Up"
+    fill_in "First Name", with: "Alex"
+    fill_in "Last Name", with: "Graff"
+    fill_in "Email", with: "graffam87gmail"
+    fill_in "Password", with: "password"
+    fill_in "Password confirmation", with: "password"
+    click_on "Sign up"
+    expect(page).to have_content "Email is invalid"
   end
 end
