@@ -1,26 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>BroadReagents</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div>
-    <% if user_signed_in? %>
-      <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
-    <% end %>
-  </div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
- <div class="notice devise"><%= notice %></div>
- <div class="alert devise"><%= alert %></div>
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "Sign In", new_user_session_path %>
+      <% end %>
+    </div>
 
-</body>
+    <div class="notice devise"><%= notice %></div>
+    <div class="alert devise"><%= alert %></div>
+
+    <%= yield %>
+
+  </body>
 </html>
