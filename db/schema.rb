@@ -11,10 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218182110) do
+ActiveRecord::Schema.define(version: 20141221191305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "itemlists", force: true do |t|
+    t.integer "order_id", null: false
+    t.integer "kit_id",   null: false
+    t.integer "amount",   null: false
+  end
+
+  create_table "machines", force: true do |t|
+    t.string "machine_name", null: false
+  end
+
+  create_table "mkcs", force: true do |t|
+    t.integer "kit_id",     null: false
+    t.integer "machine_id", null: false
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
