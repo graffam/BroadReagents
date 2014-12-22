@@ -18,7 +18,6 @@
         <li class="name">
           <h1><a href="#">Broad PDP Reagent Ordering</a></h1>
         </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
 
@@ -29,8 +28,16 @@
               <li class="active">
                 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
               </li>
-              <li>
-                <%= link_to "New Order", new_order_path, :method => :get %>
+              <li class="has-dropdown">
+                <a href="#">Machines</a>
+                <ul class="dropdown">
+                  <% @machines.each do |machine| %>
+                  <li class="active">
+                    <%= link_to machine.machinename, machine_path(machine) %>
+                  </li>
+                  <% end %>
+                  <li class="active"><a href="#">Active link in dropdown</a></li>
+                </ul>
               </li>
             <% else %>
               <li class="active">
@@ -40,20 +47,25 @@
                 <%= link_to "Sign In", new_user_session_path, :method => :get %>
               </li>
             <% end %>
-          <li class="has-dropdown">
-            <a href="#">Machines</a>
-            <ul class="dropdown">
-              <li><a href="#">First link in dropdown</a></li>
-              <li class="active"><a href="#">Active link in dropdown</a></li>
-            </ul>
-          </li>
+
         </ul>
 
         <!-- Left Nav Section -->
         <ul class="left">
-          <li><a href="#">Left Nav Button</a></li>
+        <% if user_signed_in? %>
+          <li class="has-dropdown">
+            <a href="#">New Order</a>
+            <ul class="dropdown">
+              <%= @machines.each do |machine| %>
+              <li>
+                  <%= link_to machine.machinename, new_order_path %>
+              </li>
+              <% end %>
+            </ul>
+          </li>
         </ul>
       </section>
+      <%end%>
     </nav>
     <div class="notice devise"><%= notice %></div>
     <div class="alert devise"><%= alert %></div>

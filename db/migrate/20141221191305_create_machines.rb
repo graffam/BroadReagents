@@ -1,7 +1,7 @@
 class CreateMachines < ActiveRecord::Migration
   def change
     create_table :machines do |t|
-      t.string :machine_name, null: false
+      t.string :machinename, null: false
     end
   end
 end
