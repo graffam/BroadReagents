@@ -11,7 +11,11 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @machines = Machine.all
+    if params["machine_id"]
+      @kits = Kit.find_by(machine_id: params["machine_id"])
+    else
+      @machines = Machine.all
+    end
 
   end
 

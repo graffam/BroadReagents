@@ -1,2 +1,14 @@
-<h1>THIS IS A TEST</h1>
-<%= render 'neworder' %>
+
+
+<div>
+  <h1>Machines</h1>
+    <% if params["machine_id"] %>
+
+    <% else %>
+      <% @machines.each do |machine| %>
+        <ul>
+          <li> <%= link_to machine.machinename, new_order_path(machine_id: machine.id) %> </li>
+        </ul>
+      <% end %>
+    <% end %>
+</div>
