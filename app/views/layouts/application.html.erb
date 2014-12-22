@@ -18,6 +18,7 @@
         <li class="name">
           <h1><a href="#">Broad PDP Reagent Ordering</a></h1>
         </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
 
@@ -31,11 +32,7 @@
               <li class="has-dropdown">
                 <a href="#">Machines</a>
                 <ul class="dropdown">
-                  <% @machines.each do |machine| %>
-                  <li class="active">
-                    <%= link_to machine.machinename, machine_path(machine) %>
-                  </li>
-                  <% end %>
+                  <li></li>
                   <li class="active"><a href="#">Active link in dropdown</a></li>
                 </ul>
               </li>
@@ -47,25 +44,17 @@
                 <%= link_to "Sign In", new_user_session_path, :method => :get %>
               </li>
             <% end %>
-
         </ul>
 
         <!-- Left Nav Section -->
         <ul class="left">
-        <% if user_signed_in? %>
-          <li class="has-dropdown">
-            <a href="#">New Order</a>
-            <ul class="dropdown">
-              <%= @machines.each do |machine| %>
-              <li>
-                  <%= link_to machine.machinename, new_order_path %>
-              </li>
-              <% end %>
-            </ul>
+          <% if user_signed_in? %>
+          <li class="active">
+            <%= link_to "New Order", new_order_path %>
           </li>
+          <% end %>
         </ul>
       </section>
-      <%end%>
     </nav>
     <div class="notice devise"><%= notice %></div>
     <div class="alert devise"><%= alert %></div>
