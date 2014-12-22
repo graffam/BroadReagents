@@ -1,8 +1,25 @@
 
 
-<div>
-  <h1>Machines</h1>
+
     <% if params["machine_id"] %>
+    <table>
+      <thead>
+        <tr>
+          <% @kits.each do |kit| %>
+            <th> <%= kit.kitname %> </th>
+          <% end %>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Content Goes Here</td>
+          <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+          <td>Content Goes Here</td>
+          <td>Content Goes Here</td>
+        </tr>
+      </tbody>
+    </table>
+
 
     <% else %>
       <% @machines.each do |machine| %>
@@ -11,4 +28,3 @@
         </ul>
       <% end %>
     <% end %>
-</div>
