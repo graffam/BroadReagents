@@ -13,14 +13,14 @@
       <tbody>
         <tr>
           <%= form_for @order do |f| %>
-          <%= f.fields_for :listitem do |itemlists_form|  %>
             <% @kits.each do |kit| %>
-            <td>
-              <%= itemlists_form.text_field :amount %>
-            </td>
-            <% end %>
-            <%= f.submit "Place Order" %>
+              <%= f.fields_for :listitem do |itemlists_form|  %>
+                <td>
+                    <%= itemlists_form.text_field :amount %>
+                </td>
+              <% end %>
           <% end %>
+          <%= f.submit "Place Order" %>
           <% end %>
         </tr>
       </tbody>
