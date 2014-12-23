@@ -12,15 +12,19 @@
       </thead>
       <tbody>
         <tr>
-          <td>Content Goes Here</td>
-          <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-          <td>Content Goes Here</td>
-          <td>Content Goes Here</td>
+          <%= form_for @order do |f| %>
+          <%= f.fields_for :listitem do |itemlists_form|  %>
+            <% @kits.each do |kit| %>
+            <td>
+              <%= itemlists_form.text_field :amount %>
+            </td>
+            <% end %>
+            <%= f.submit "Place Order" %>
+          <% end %>
+          <% end %>
         </tr>
       </tbody>
     </table>
-
-
     <% else %>
       <% @machines.each do |machine| %>
         <ul>
