@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     if params["machine_id"]
       @machine = Machine.find_by(id: params["machine_id"])
       @kits = @machine.kits
-      # @listitem = Listitem.new
+      @kits.length.times {@order.listitems.build}
     else
       @machines = Machine.all
     end

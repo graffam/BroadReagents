@@ -1,6 +1,3 @@
-
-
-
     <% if params["machine_id"] %>
     <table>
       <thead>
@@ -11,18 +8,17 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
           <%= form_for @order do |f| %>
-            <% @kits.each do |kit| %>
-              <%= f.fields_for :listitem do |itemlists_form|  %>
-                <td>
-                    <%= itemlists_form.text_field :amount %>
-                </td>
-              <% end %>
+          <tr>
+            <%= f.fields_for :listitems do |listitems_form| %>
+              <td>
+                <%= listitems_form.text_field :amount %>
+                <%= listitems_form.hidden_field :kit_id %>
+              </td>
+            <% end %>
+            <%= f.submit "Place Order" %>
+          </tr>
           <% end %>
-          <%= f.submit "Place Order" %>
-          <% end %>
-        </tr>
       </tbody>
     </table>
     <% else %>
