@@ -9,7 +9,7 @@ feature "User adds a new order" do
     fill_in "Password", with: user.password
     click_on "Log in"
     click_on "New Order"
-    expect(page).to have_content "HS2500"
+    click_on "HS2500"
   end
 
   # scenario "user places an order" do
