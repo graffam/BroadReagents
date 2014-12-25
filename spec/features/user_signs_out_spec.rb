@@ -7,7 +7,7 @@ feature "user signs out of account" do
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
     click_on "Log in"
-    click_on "Sign Out"
+    click_on "Sign out"
     expect(page).to have_content "Signed out successfully."
   end
 end

@@ -15,6 +15,7 @@
                 <%= listitems_form.text_field :amount %>
                 <%= listitems_form.hidden_field :kit_id %>
               </td>
+              <% @counter += 1 %>
             <% end %>
             <%= f.submit "Place Order" %>
           </tr>

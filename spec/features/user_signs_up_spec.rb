@@ -21,7 +21,7 @@ feature "user signs up for an account" do
     click_on "Sign up"
     expect(page).to have_content "Welcome! You have signed up successfully."
     expect(page).to_not have_link "Sign Up"
-    expect(page).to have_link "Sign Out"
+    expect(page).to have_link "Sign out"
   end
 
   scenario "password fields to not match" do

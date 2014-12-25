@@ -7,9 +7,9 @@ feature "User adds a new order" do
     visit new_user_session_path
     fill_in "Email", with: user.email
     fill_in "Password", with: user.password
-    click_on "Sign In"
+    click_on "Log in"
     click_on "New Order"
-    expect(page).to have_content "Place Order"
+    expect(page).to have_content "HS2500"
   end
 
   # scenario "user places an order" do
