@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20141226234319) do
     t.string "name", null: false
   end
 
-  create_table "machine_kit_compatabilities", force: true do |t|
+  create_table "machine_kit_compatibilities", force: true do |t|
     t.integer "kit_id",     null: false
     t.integer "machine_id", null: false
   end
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20141226234319) do
   create_table "orders", force: true do |t|
     t.integer  "user_id",                      null: false
     t.string   "comment"
-    t.string   "needed_by"
+    t.datetime "needed_by"
     t.string   "status",     default: "To Do"
     t.datetime "created_at"
     t.datetime "updated_at"

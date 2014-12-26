@@ -24,51 +24,51 @@ Kit.create(name: "508c")#10
 Kit.create(name: "516c")#11
 Kit.create(name: "cBotV1")#12
 #Relates kits to HS2500
-Machine_kit_compatability.create(machine_id: 1, kit_id:1)
-Machine_kit_compatability.create(machine_id: 1, kit_id:2)
-Machine_kit_compatability.create(machine_id: 1, kit_id:3)
-Machine_kit_compatability.create(machine_id: 1, kit_id:4)
-Machine_kit_compatability.create(machine_id: 1, kit_id:5)
-Machine_kit_compatability.create(machine_id: 1, kit_id:6)
-Machine_kit_compatability.create(machine_id: 1, kit_id:7)
-Machine_kit_compatability.create(machine_id: 1, kit_id:8)
-Machine_kit_compatability.create(machine_id: 1, kit_id:9)
-Machine_kit_compatability.create(machine_id: 1, kit_id:10)
-Machine_kit_compatability.create(machine_id: 1, kit_id:11)
-Machine_kit_compatability.create(machine_id: 1, kit_id:12)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:1)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:2)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:3)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:4)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:5)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:6)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:7)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:8)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:9)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:10)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:11)
+Machine_kit_compatibility.create(machine_id: 1, kit_id:12)
 #Create Kits for HSX
 Kit.create(name: "cBotV2")#13
 Kit.create(name: "310c")#14
 Kit.create(name: "Rehyb R1")#15
 Kit.create(name: "PE R2")#16
 #Relates kits to HSX
-Machine_kit_compatability.create(machine_id: 2, kit_id:12)
-Machine_kit_compatability.create(machine_id: 2, kit_id:13)
-Machine_kit_compatability.create(machine_id: 2, kit_id:4)
-Machine_kit_compatability.create(machine_id: 2, kit_id:14)
-Machine_kit_compatability.create(machine_id: 2, kit_id:11)
-Machine_kit_compatability.create(machine_id: 2, kit_id:15)
-Machine_kit_compatability.create(machine_id: 2, kit_id:16)
+Machine_kit_compatibility.create(machine_id: 2, kit_id:12)
+Machine_kit_compatibility.create(machine_id: 2, kit_id:13)
+Machine_kit_compatibility.create(machine_id: 2, kit_id:4)
+Machine_kit_compatibility.create(machine_id: 2, kit_id:14)
+Machine_kit_compatibility.create(machine_id: 2, kit_id:11)
+Machine_kit_compatibility.create(machine_id: 2, kit_id:15)
+Machine_kit_compatibility.create(machine_id: 2, kit_id:16)
 #Create kits for NextSeq
 Kit.create(name: "NEXTSEQ75")#17
 Kit.create(name: "NEXTSEQ150")#18
 Kit.create(name: "NEXSEQ300")#19
 #Relates kits to NextSeq
-Machine_kit_compatability.create(machine_id: 3, kit_id:17)
-Machine_kit_compatability.create(machine_id: 3, kit_id:18)
-Machine_kit_compatability.create(machine_id: 3, kit_id:19)
+Machine_kit_compatibility.create(machine_id: 3, kit_id:17)
+Machine_kit_compatibility.create(machine_id: 3, kit_id:18)
+Machine_kit_compatibility.create(machine_id: 3, kit_id:19)
 #Ceate kits for HS2000V3
 Kit.create(name: "44cSR")#20
 Kit.create(name: "Rehyb R1Kit")#21
 Kit.create(name: "Index Primer Box R1& PE R2")#22
 #Relates kits to HS2000V3
-Machine_kit_compatability.create(machine_id: 4, kit_id:12)
-Machine_kit_compatability.create(machine_id: 4, kit_id:20)
-Machine_kit_compatability.create(machine_id: 4, kit_id:1)
-Machine_kit_compatability.create(machine_id: 4, kit_id:3)
-Machine_kit_compatability.create(machine_id: 4, kit_id:4)
-Machine_kit_compatability.create(machine_id: 4, kit_id:5)
-Machine_kit_compatability.create(machine_id: 4, kit_id:6)
-Machine_kit_compatability.create(machine_id: 4, kit_id:7)
-Machine_kit_compatability.create(machine_id: 4, kit_id:21)
-Machine_kit_compatability.create(machine_id: 4, kit_id:22)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:12)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:20)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:1)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:3)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:4)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:5)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:6)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:7)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:21)
+Machine_kit_compatibility.create(machine_id: 4, kit_id:22)
