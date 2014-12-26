@@ -1,5 +1,5 @@
 class Machine < ActiveRecord::Base
-  has_many :mkcs
-  has_many :kits, through: :mkcs
+  has_many :machine_kit_compatabilities
+  has_many :kits, through: :machine_kit_compatabilities
 
 end

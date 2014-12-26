@@ -12,10 +12,8 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     if params["machine_id"]
-      @counter = 0
       @machine = Machine.find_by(id: params["machine_id"])
       @kits = @machine.kits
-      binding.pry
       @kits.length.times {@order.listitems.build}
     else
       @machines = Machine.all
@@ -27,6 +25,9 @@ class OrdersController < ApplicationController
     binding.pry
   end
 
+  def order_params
+    params.require(:order).permit(:machine_id, :comment, :needed_by, listitems_attributes: [:id, :amount])
+  end
 
 
 end

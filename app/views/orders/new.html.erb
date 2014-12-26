@@ -5,21 +5,11 @@
           <% @kits.each do |kit| %>
             <th> <%= kit.kitname %> </th>
           <% end %>
+            <th>Needed By</th>
+            <th>Comments</th>
         </tr>
       </thead>
       <tbody>
-          <%= form_for @order do |f| %>
-          <tr>
-            <%= f.fields_for :listitems do |listitems_form| %>
-              <td>
-                <%= listitems_form.text_field :amount %>
-                <%= listitems_form.hidden_field :kit_id %>
-              </td>
-              <% @counter += 1 %>
-            <% end %>
-            <%= f.submit "Place Order" %>
-          </tr>
-          <% end %>
       </tbody>
     </table>
     <% else %>
