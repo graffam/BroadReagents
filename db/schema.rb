@@ -11,28 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141223150438) do
+ActiveRecord::Schema.define(version: 20141226234319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "kits", force: true do |t|
-    t.string "kitname", null: false
-  end
-
-  create_table "listitems", force: true do |t|
+  create_table "kit_orders", force: true do |t|
     t.integer "order_id", null: false
     t.integer "kit_id",   null: false
     t.integer "amount",   null: false
   end
 
-  create_table "machines", force: true do |t|
-    t.string "machinename", null: false
+  create_table "kits", force: true do |t|
+    t.string "name", null: false
   end
 
-  create_table "mkcs", force: true do |t|
+  create_table "machine_kit_compatabilities", force: true do |t|
     t.integer "kit_id",     null: false
     t.integer "machine_id", null: false
+  end
+
+  create_table "machines", force: true do |t|
+    t.string "name", null: false
   end
 
   create_table "orders", force: true do |t|
