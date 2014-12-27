@@ -1,4 +1,4 @@
 class KitOrder < ActiveRecord::Base
-  belongs_to :orders
-  belongs_to :kits
+  belongs_to :order
+  belongs_to :kit
 end
