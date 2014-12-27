@@ -1,0 +1,6 @@
+<h1>Pick a machine </h1>
+<ul>
+  <% @machines.each do |machine| %>
+    <li> <%= link_to machine.name,  new_machine_order_path(machine) %> </li>
+  <% end %>
+</ul>

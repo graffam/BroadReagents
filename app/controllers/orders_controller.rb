@@ -10,15 +10,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @order = Order.new
-    if params["machine_id"]
-      @machine = Machine.find_by(id: params["machine_id"])
-      @kits = @machine.kits
-      @kits.length.times {@order.listitems.build}
-    else
-      @machines = Machine.all
-    end
-
+    @machine = Machine.find_by id: params["machine_id"]
+    @kits = @machine.kits
   end
 
   def create
