@@ -13,6 +13,7 @@ class OrdersController < ApplicationController
     @machine = Machine.find_by id: params["machine_id"]
     @kits = @machine.kits
     @order = Order.new
+    @kits.length.times {@order.kit_orders.build}
   end
 
   def create
