@@ -4,12 +4,21 @@
   <thead>
     <tr>
       <% @kits.each do |kit| %>
-        <th> <%= kit.name  %></th>
+        <th> <%= kit.name %></th>
       <% end %>
     </tr>
   </thead>
   <tbody>
     <tr>
+      <% form_for [@machine,@order] do |f| %>
+        <% f.fields_for :kit_order do |kit_order_form| %>
+        <td>
+          <%= kit_order_form.label :amount %>
+          <%= kit_order_form.text_field :amount %>
+        </td>
+        <% end %>
+        <%= f.submit "Place Order" %>
+      <%end %>
     </tr>
   </tbody>
 </table>

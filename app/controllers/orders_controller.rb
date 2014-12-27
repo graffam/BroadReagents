@@ -12,6 +12,7 @@ class OrdersController < ApplicationController
   def new
     @machine = Machine.find_by id: params["machine_id"]
     @kits = @machine.kits
+    @order = Order.new
   end
 
   def create
