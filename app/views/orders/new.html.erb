@@ -13,13 +13,11 @@
   <tbody>
     <tr>
       <%= form_for [@machine,@order] do |f| %>
-        <%= f.fields_for :kit_order do |kit_order_form| %>
-          <% @kits.each do |kit| %>
+        <%= f.fields_for :kit_orders do |ff| %>
             <td>
-              <%= kit_order_form.text_field :amount %>
-              <%= kit_order_form.hidden_field :kit_id, value: kit.id %>
+              <%= ff.number_field :amount %>
+              <%= ff.hidden_field :kit_id %>
             </td>
-          <% end %>
         <% end %>
         <td>
           <%= f.datetime_field(:needed_by) %>
