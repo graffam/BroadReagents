@@ -19,7 +19,7 @@ feature "User adds a new order" do
     expect(page).to have_content()
   end
 
-  scenario "user places a new order" do
+  scenario "user places a new order and is directed to the order's detail page" do
     user = FactoryGirl.create(:user)
     visit new_user_session_path
     fill_in "Email", with: user.email
@@ -27,6 +27,10 @@ feature "User adds a new order" do
     click_on "Log in"
     click_on "New Order"
     click_on "HS2500"
+    fill_in "#1", with: 1
+    fill_in "comments", with: "For last weeks failed samples"
+    click_on "Place Order"
+    expect(page).to have_content("For last weeks failed samples")
   end
 
 
