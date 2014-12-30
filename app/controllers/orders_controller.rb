@@ -19,11 +19,12 @@ class OrdersController < ApplicationController
   end
 
   def create
-    binding.pry
+
+
   end
 
   def order_params
-    params.require(:order).permit(:machine_id, :comment, :needed_by, listitems_attributes: [:id, :amount])
+    params.require(:order).permit(:machine_id, :comment, :needed_by, :kit_order_attributes)
   end
 
 

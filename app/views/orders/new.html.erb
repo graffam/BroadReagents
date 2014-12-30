@@ -15,7 +15,7 @@
       <%= form_for [@machine,@order] do |f| %>
         <%= f.fields_for :kit_orders do |ff| %>
             <td>
-              <%= ff.number_field :amount %>
+              <%= ff.text_field :amount %>
               <%= ff.hidden_field :kit_id %>
             </td>
         <% end %>
