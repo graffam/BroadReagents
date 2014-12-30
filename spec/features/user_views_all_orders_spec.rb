@@ -8,10 +8,14 @@ feature "display all of the orders" do
   #     both forward and reverse
 
   scenario "User views all of the orders" do
-    
-
-
-
+    order = FactoryGirl.create(:order)
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
+    click_on "Log in"
+    visit all_path
+    expect(page).to have_content("10")
   end
 
 

@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   resources :machines, :only => [:index,:show] do
     resources :orders
   end
+
+
+  scope module: 'all' do
+    resources :orders, :only => [:index]
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
