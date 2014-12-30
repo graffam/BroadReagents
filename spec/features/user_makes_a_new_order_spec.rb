@@ -16,7 +16,7 @@ feature "User adds a new order" do
     click_on "Log in"
     click_on "New Order"
     click_on "HS2500"
-    expect(page).to have_content()
+    expect(page).to have_content ("58c")
   end
 
   scenario "user places a new order and is directed to the order's detail page" do
@@ -27,8 +27,9 @@ feature "User adds a new order" do
     click_on "Log in"
     click_on "New Order"
     click_on "HS2500"
-    fill_in "#1", with: 1
-    fill_in "comments", with: "For last weeks failed samples"
+    fill_in "order_kit_orders_attributes_0_amount", with: 1
+    fill_in "order_comment", with: "For last weeks failed samples"
+    fill_in "order_needed_by", with: "As soon as possible"
     click_on "Place Order"
     expect(page).to have_content("For last weeks failed samples")
   end

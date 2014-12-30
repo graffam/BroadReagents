@@ -9,6 +9,6 @@ FactoryGirl.define do
   factory :kit_order do
     kit_id 1
     amount 10
-    order_id 1
+    order_id 
   end
 end

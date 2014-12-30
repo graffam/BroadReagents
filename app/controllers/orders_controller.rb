@@ -24,7 +24,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:machine_id, :comment, :needed_by, :kit_order_attributes)
+    params.require(:order).permit(:machine_id, :comment, :needed_by, :kit_order_attributes [:id])
   end
 
 
