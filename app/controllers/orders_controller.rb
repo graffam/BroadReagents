@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
     @machine = Machine.find_by id: params["machine_id"]
     @kits = @machine.kits
     @order = Order.find_by id: params["id"]
-    binding.pry
   end
 
   def new
