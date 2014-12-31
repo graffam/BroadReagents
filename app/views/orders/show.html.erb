@@ -13,9 +13,18 @@
     <tr>
       <% @order.kit_orders.each do |kit_order| %>
       <td>
-        <%= kit_order.amount %> 
+        <%= kit_order.amount %>
       </td>
       <% end %>
+      <td>
+        <%= @order.needed_by %>
+      </td>
+      <td>
+        <%= @order.comment %>
+      </td>
+      <td>
+        <%= @order.status %>
+      </td>
     </tr>
   </tbody>
 </table>

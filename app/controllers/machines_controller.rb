@@ -1,5 +1,6 @@
 class MachinesController < ApplicationController
   def index
+    authenticate_user!
     @machines = Machine.all
   end
 
