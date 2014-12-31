@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <% @kits.each do |kit| %>
+      <th> <%= kit.name %></th>
+      <% end %>
+      <th>Needed By</th>
+      <th>Comments</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @order.kit_orders.each do |kit_order| %>
+      <td>
+        <%= kit_order.amount %> 
+      </td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>

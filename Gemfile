@@ -40,6 +40,9 @@ gem 'foundation-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+group :test do
+  gem 'coveralls', require: false
+end
 
 group :development, :test do
   gem 'rspec-rails'
