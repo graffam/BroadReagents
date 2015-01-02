@@ -7,10 +7,14 @@ require 'rails_helper.rb'
 
 
 context "There are orders" do
-  FactoryGirl.build(:order)
+  order = FactoryGirl.create(:order)
+  binding.pry
 
   scenario "User visits the index page and sees all the orders" do
     visit all_orders_path
+
+    save_and_open_page
+
     expect(page).to have_content("This is a test")
   end
 
