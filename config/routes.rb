@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
 
-  scope module: 'all' do
+  namespace :all do
     resources :orders, :only => [:index]
   end
   # Example of regular route:
