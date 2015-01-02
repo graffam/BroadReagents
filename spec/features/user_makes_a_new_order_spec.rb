@@ -5,7 +5,7 @@ require 'rails_helper.rb'
 #  [X] User can visit the new order page and be shown a list of machines
 #  [X] User can place a new order
 #  [X] User is redirected to the order they just placed
-#  [] User must be logged in to create an order
+#  [X] User must be logged in to create an order
 #  [] An error is shown if none of the kits are filled in, or needed by
 
 feature "User adds a new order" do
