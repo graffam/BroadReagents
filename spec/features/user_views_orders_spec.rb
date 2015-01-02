@@ -1,7 +1,7 @@
 require "rails_helper.rb"
 # As a user I want to be able to view all of the orders
 # so that I can prioritize what work I need to do
-#  [] User see all of the current orders
+#  [X] User see all of the current orders
 #  [] User can select an order and see its details
 #  [] User can sort all of the orders by status, needed by and machine type
 
