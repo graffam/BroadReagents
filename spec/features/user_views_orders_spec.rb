@@ -10,7 +10,7 @@ context "There are orders" do
   FactoryGirl.build(:order)
 
   scenario "User visits the index page and sees all the orders" do
-    visit orders_path
+    visit all_orders_path
     expect(page).to have_content("This is a test")
   end
 
